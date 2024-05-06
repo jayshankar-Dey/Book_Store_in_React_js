@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.profile {
+    animation: animate 4s linear infinite alternate-reverse;
+}
+
+@keyframes animate {
+    0% {
+        box-shadow: 5px 5px 30px green;
+        transform: translate(0px, -9px);
+    }
+    25% {
+        box-shadow: 5px 5px 30px blue;
+        transform: translate(0px, -6px);
+    }
+    75% {
+        box-shadow: 5px 5px 30px red;
+        transform: translate(0px, -3px);
+    }
+    100% {
+        box-shadow: 5px 5px 30px yellow;
+        transform: translate(0px, 0px);
+    }
+}
+
+.menu {
+    overflow: hidden;
+}
+
+.menu::before {
+    content: '';
+    width: 105%;
+    height: 950px;
+    background: linear-gradient(#4fd710, #29c2e9);
+    position: absolute;
+    left: -5px;
+    animation: animate1 4s linear infinite;
+}
+
+@keyframes animate1 {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+.card::before {
+    content: '';
+    width: 250%;
+    height: 50px;
+    position: absolute;
+    background: rgb(7, 174, 240);
+    animation: animate1 4s linear infinite;
+    left: -60%;
+    top: 50%;
+}
+
+.box {
+    @apply px-32 p-1 translate-y-16
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
